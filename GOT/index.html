@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="main.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Game of Thrones Houses</h1>
+  <div class="data-container">
+    <div class="house-table">
+      <table>
+        <thead>
+          <tr data-bind="foreach: labels">
+            <td data-bind="text: $data"></td>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: houses">
+          <tr data-bind="click: showDetail">
+            <td data-bind="text: name"></td>
+            <td data-bind="text: region"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="house-detail">
+      <div class="crest">
+        <h3>Crest</h3>
+        <div data-bind="text: selectedCrest, color: 'blue'"></div>
+      </div>
+      <div class="motto">
+        <h3>Motto</h3>
+        <div data-bind="text: selectedMotto, color: 'blue'"></div>
+      </div>
+      <span data-bind="text: regions.length"></span>
+      <select data-bind="options: regions, optionsCaption: 'Filter by region'"></select>
+      <input />
+    </div>
+  </div>
+</body>
+<script src="main.js"></script>
+
+</html>
